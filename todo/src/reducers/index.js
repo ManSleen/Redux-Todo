@@ -1,12 +1,12 @@
-import { ADD_TODO } from "../actions";
+import dummyData from "../dummy-data";
 
 const initialState = {
-  todos: []
+  todos: dummyData
 };
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TODO:
+    case "ADD_TODO":
       return {
         ...state,
         todos: action.payload
