@@ -6,7 +6,7 @@ import { addTodo } from "../actions";
 class TodoForm extends React.Component {
   state = {
     userId: 1,
-    id: Date.now(),
+    id: "",
     title: "",
     completed: false
   };
@@ -21,7 +21,8 @@ class TodoForm extends React.Component {
     e.preventDefault();
     this.props.addTodo(this.state);
     this.setState({
-      title: ""
+      title: "",
+      id: Date.now()
     });
   };
 

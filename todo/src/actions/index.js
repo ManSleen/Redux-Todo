@@ -4,3 +4,10 @@ export const addTodo = todo => {
     payload: todo
   };
 };
+
+export const toggleComplete = (todo, id) => {
+  return {
+    type: "TOGGLE_COMPLETE",
+    payload: todo
+  };
+};
