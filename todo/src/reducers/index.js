@@ -1,5 +1,5 @@
 import dummyData from "../dummy-data";
-import { ADD_TODO, TOGGLE_COMPLETE } from "../actions";
+import { ADD_TODO, TOGGLE_COMPLETE, DELETE_TODO } from "../actions";
 
 const initialState = {
   todos: dummyData
@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action) => {
         todos: state.todos.map((todo, index) => {
           if (action.payload === index) {
             console.log("action.payload", action.payload);
-            console.log("index", index);
+            console.log({ ...todo });
 
             return {
               ...todo,
@@ -26,6 +26,17 @@ export const reducer = (state = initialState, action) => {
             };
           } else {
             return todo;
+          }
+        })
+      };
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo, index) => {
+          if (action.payload !== index) {
+            return {
+              ...todo
+            };
           }
         })
       };

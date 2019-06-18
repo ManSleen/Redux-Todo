@@ -2,12 +2,8 @@ import React from "react";
 
 const Todo = props => {
   return (
-    <div>
+    <div className={`todo-card${props.todo.completed ? " completed" : ""}`}>
       <h2>{props.todo.title}</h2>
-      <p>
-        <strong>Completed: </strong>
-        {props.todo.completed ? "true" : "false"}
-      </p>
     </div>
   );
 };

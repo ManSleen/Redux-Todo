@@ -1,4 +1,28 @@
 .App {
-  width: 90%;
+  width: 30%;
   margin: auto;
+  background-color: rgb(248, 200, 66);
+  text-align: center;
+}
+
+.todo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid lightcoral;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.todo-form {
+  padding: 0 20px;
+}
+
+.todo-delete-button {
+  margin: 0 8px;
+}
+
+.completed {
+  text-decoration: line-through;
 }
