@@ -13,7 +13,7 @@ class App extends React.Component {
         <h1>Todo List</h1>
         <TodoForm />
         <hr />
-        <TodoList todos={this.props.todos} />
+        <TodoList />
       </div>
     );
   }

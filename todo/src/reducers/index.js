@@ -1,4 +1,5 @@
 import dummyData from "../dummy-data";
+import { ADD_TODO, TOGGLE_COMPLETE } from "../actions";
 
 const initialState = {
   todos: dummyData
@@ -6,15 +7,24 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case ADD_TODO:
       return {
         ...state,
         todos: [action.payload, ...state.todos]
       };
-    case "TOGGLE_CONPLETED":
+    case TOGGLE_COMPLETE:
       return {
         ...state,
-        todos: [...state.todos]
+        todos: state.todos.map((todo, index) => {
+          if (action.payload === index) {
+            return {
+              ...todo,
+              completed: !todo.completed
+            };
+          } else {
+            return todo;
+          }
+        })
       };
     default:
       return state;
