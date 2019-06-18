@@ -17,6 +17,9 @@ export const reducer = (state = initialState, action) => {
         ...state,
         todos: state.todos.map((todo, index) => {
           if (action.payload === index) {
+            console.log("action.payload", action.payload);
+            console.log("index", index);
+
             return {
               ...todo,
               completed: !todo.completed
