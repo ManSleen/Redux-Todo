@@ -13,7 +13,8 @@ class TodoForm extends React.Component {
 
   onChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      id: Date.now()
     });
   };
 
@@ -22,15 +23,13 @@ class TodoForm extends React.Component {
     this.props.addTodo(this.state);
     this.setState({
       title: "",
-      id: Date.now()
+      id: ""
     });
   };
 
   render() {
-    console.log("this.props", this.props);
-    console.log("this.state", this.state);
     return (
-      <div>
+      <div className="todo-form">
         <form onSubmit={this.addTodo}>
           <input
             type="text"
